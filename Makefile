@@ -7,3 +7,4 @@ all: #mpi_coletiva mpi_p2p_bloqueante mpi_p2p_naobloqueante
 
 clean:
 	rm mpi_coletiva mpi_p2p_bloqueante mpi_p2p_naobloqueante
+	rm *.out *.err nodes.*
