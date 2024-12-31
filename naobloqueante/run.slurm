@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH --job-name=mpi_p2p_bloqueante
+#SBATCH --job-name=mpi_p2p_naobloqueante
 #SBATCH --partition=hype
 #SBATCH --nodes=4
-#SBATCH --ntasks=160
-#SBATCH --time=1:30:00
+#SBATCH --ntasks=20
+#SBATCH --time=4:30:00
 #SBATCH --output=%x_%j.out
 #SBATCH --error=erros/%x_%j.err
 
@@ -18,5 +18,5 @@ mpirun -np $SLURM_NTASKS \
        --mca btl ^openib \
        --mca btl_tcp_if_include eno2 \
        --bind-to none -np $SLURM_NTASKS \
-       ./mpi_p2p_bloqueante 16384  &>> bloquante_16384_160_4.out
+       ./mpi_p2p_naobloqueante 2048  &>> naobloqueante_2048_20_4.out
 sacct -j $SLURM_JOB_ID --format=JobID,JobName,CPUTime,MaxRSS,AveRSS,Elapsed

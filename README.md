@@ -9,7 +9,7 @@ Using MPI library for test matriz multiplication
 maybe see something to chance in the code
 
 # Usefuly commands
-sinfo
-sin
-squeue
+- sinfo
+- sin
+- squeue: this see the all jobs in the queue, very good
 - to run: sbatch run.slurm
